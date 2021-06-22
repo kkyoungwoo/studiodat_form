@@ -1,0 +1,321 @@
+.form_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 950px;
+  background: white;
+}
+
+.form_wrap .company_form {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "nav nav" "company boss" "address address" "manager compony_position" "phone email" "website website" "Field Field" "item item" "banner banner";
+  grid-gap: 0px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.form_wrap .company_form nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nav;
+}
+
+.form_wrap .company_form .form {
+  border: 1px solid black;
+}
+
+.form_wrap .company_form .form.company {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: company;
+}
+
+.form_wrap .company_form .form.boss {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: boss;
+}
+
+.form_wrap .company_form .form.address {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: address;
+}
+
+.form_wrap .company_form .form.manager {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: manager;
+}
+
+.form_wrap .company_form .form.compony_position {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: compony_position;
+}
+
+.form_wrap .company_form .form.phone {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: phone;
+}
+
+.form_wrap .company_form .form.email {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: email;
+}
+
+.form_wrap .company_form .form.website {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: website;
+}
+
+.form_wrap .company_form .form.Field {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: Field;
+}
+
+.form_wrap .company_form .form.item {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: item;
+}
+
+.form_wrap .company_form .form.banner {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: banner;
+}
+
+.form_wrap .business_Registration {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "number number" "file file";
+  grid-gap: 0px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.form_wrap .business_Registration .Registration.number {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: number;
+}
+
+.form_wrap .business_Registration .Registration.file {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: file;
+}
+
+.form_wrap .application {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "division division quantity quantity unit_price price";
+  grid-gap: 0px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.form_wrap .application .booth.division {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: division;
+}
+
+.form_wrap .application .booth.quantity {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: quantity;
+}
+
+.form_wrap .application .booth.unit_price {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: unit_price;
+}
+
+.form_wrap .application .booth.price {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: price;
+}
+
+.form_wrap .application .booth.boothname {
+  grid-area: boothname;
+}
+
+.form_wrap .application .booth.independent {
+  grid-area: independent;
+}
+
+.form_wrap .application .booth.nomal {
+  grid-area: nomal;
+}
+
+.form_wrap .application .booth.premium {
+  grid-area: premium;
+}
+
+.form_wrap .application .booth.elec {
+  grid-area: elec;
+}
+
+.form_wrap .application .booth.one_phase {
+  grid-area: one_phase;
+}
+
+.form_wrap .application .booth.two_phase {
+  grid-area: two_phase;
+}
+
+.form_wrap .application .booth.three_phase {
+  grid-area: three_phase;
+}
+
+.form_wrap .application .booth.tell {
+  grid-area: tell;
+}
+
+.form_wrap .application .booth.ko {
+  grid-area: ko;
+}
+
+.form_wrap .application .booth.global {
+  grid-area: global;
+}
+
+.form_wrap .application .booth.water {
+  grid-area: water;
+}
+
+.form_wrap .application .booth.air {
+  grid-area: air;
+}
+
+.form_wrap .application .booth.lan {
+  grid-area: lan;
+}
+
+.form_wrap .application .booth.ea {
+  grid-area: ea;
+}
+
+.form_wrap .application .booth.kw {
+  grid-area: kw;
+}
+
+.form_wrap .application .booth.unit {
+  grid-area: unit;
+}
+
+.form_wrap .application .booth.place {
+  grid-area: place;
+}
+
+.form_wrap .application .booth.port {
+  grid-area: port;
+}
+
+.form_wrap .application .booth.won {
+  grid-area: won;
+}
+
+.form_wrap .application .booth.five {
+  grid-area: five;
+}
+
+.form_wrap .application .booth.nine {
+  grid-area: nine;
+}
+
+.form_wrap .application .booth.seven {
+  grid-area: seven;
+}
+
+.form_wrap .application .booth.two {
+  grid-area: two;
+}
+
+.form_wrap .application .booth.one {
+  grid-area: one;
+}
+
+.form_wrap .application .booth.support {
+  grid-area: support;
+}
+
+.form_wrap .application .booth.conference {
+  grid-area: conference;
+}
+
+.form_wrap .application .booth.subtotal {
+  grid-area: subtotal;
+}
+
+.form_wrap .application .booth.vat {
+  grid-area: vat;
+}
+
+.form_wrap .application .booth.total {
+  grid-area: total;
+}
+
+.form_wrap .application .booth.atc {
+  grid-area: atc;
+}
+/*# sourceMappingURL=form.css.map */

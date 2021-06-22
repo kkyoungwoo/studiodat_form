@@ -1,0 +1,230 @@
+@mixin centerPosition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_wrap{
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+    background: white;
+    .company_form {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:    "nav nav"
+                                "company boss"
+                                "address address"
+                                "manager compony_position"
+                                "phone email"
+                                "website website"
+                                "Field Field"
+                                "item item"
+                                "banner banner";
+        grid-gap: 0px;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+
+        nav {
+            @include centerPosition;
+            grid-area: nav;
+        }
+        
+        .form{
+            border: 1px solid black;
+        }
+     
+        .form.company {
+            grid-area: company;
+        }
+     
+        .form.boss {
+            grid-area: boss;
+        }
+     
+        .form.address {
+            grid-area: address;
+        }
+
+        .form.manager {
+            grid-area: manager;
+        }
+     
+        .form.compony_position {
+            grid-area: compony_position;
+        }
+     
+        .form.phone {
+            grid-area: phone;
+        }
+
+        .form.email {
+            grid-area: email;
+        }
+     
+        .form.website {
+            grid-area: website;
+        }
+     
+        .form.Field {
+            grid-area: Field;
+        }
+
+        .form.item {
+            grid-area: item;
+        }
+
+        .form.banner {
+            grid-area: banner;
+        }
+     
+    }
+    .business_Registration{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:    "number number"
+                                "file file";
+        grid-gap: 0px;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+
+        .Registration.number {
+            grid-area: number;
+        }
+     
+        .Registration.file {
+            grid-area: file;
+        }
+    }
+    .application{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:    "division division quantity quantity unit_price price";
+        grid-gap: 0px;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+
+        .booth.division {
+            @include centerPosition;
+            grid-area: division;
+        }
+
+        .booth.quantity {
+            grid-area: quantity;
+        }
+        .booth.unit_price {
+            grid-area: unit_price;
+        }
+        .booth.price {
+            grid-area: price;
+        }
+        //
+        .booth.boothname {
+            grid-area: boothname;
+        }
+        .booth.independent {
+            grid-area: independent;
+        }
+        .booth.nomal {
+            grid-area: nomal;
+        }
+        .booth.premium {
+            grid-area: premium;
+        }
+        //
+        .booth.elec {
+            grid-area: elec;
+        }
+        .booth.one_phase {
+            grid-area: one_phase;
+        }
+        .booth.two_phase {
+            grid-area: two_phase;
+        }
+        .booth.three_phase {
+            grid-area: three_phase;
+        }
+        //
+        .booth.tell {
+            grid-area: tell;
+        }
+        .booth.ko {
+            grid-area: ko;
+        }
+        .booth.global {
+            grid-area: global;
+        }
+        //
+        .booth.water {
+            grid-area: water;
+        }
+        .booth.air {
+            grid-area: air;
+        }
+        .booth.lan {
+            grid-area: lan;
+        }
+        //
+        .booth.ea {
+            grid-area: ea;
+        }
+        .booth.kw {
+            grid-area: kw;
+        }
+        .booth.unit {
+            grid-area: unit;
+        }
+        .booth.place {
+            grid-area: place;
+        }
+        .booth.port {
+            grid-area: port;
+        }
+        .booth.won {
+            grid-area: won;
+        }
+        .booth.five {
+            grid-area: five;
+        }
+        .booth.nine {
+            grid-area: nine;
+        }
+        .booth.seven {
+            grid-area: seven;
+        }
+        .booth.two {
+            grid-area: two;
+        }
+        .booth.one {
+            grid-area: one;
+        }
+        .booth.support {
+            grid-area: support;
+        }
+        .booth.conference {
+            grid-area: conference;
+        }
+        //
+        .booth.subtotal {
+            grid-area: subtotal;
+        }
+        .booth.vat {
+            grid-area: vat;
+        }
+        .booth.total {
+            grid-area: total;
+        }
+        .booth.atc {
+            grid-area: atc;
+        }
+    }
+}
