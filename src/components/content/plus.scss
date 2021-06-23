@@ -1,0 +1,90 @@
+.plus_wrap{
+    .plus_header{
+        width: 950px;
+        .plus_header_warp{
+            display: flex;
+            margin-top: 30px;
+            .header_left{
+                flex: 1;
+                height: 30px;
+                display: flex;
+                align-self: flex-end;
+                .header_left_text{
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #003366;
+                }
+                .header_left_btn{
+                    color: white;
+                    background: #113366;
+                    border: none;
+                    width: 45px;
+                    height: 25px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            }
+            .header_right{
+                flex: 1.1;
+                font-size: 14px;
+            }
+        }
+        .plus_warp{
+            display: flex;
+            width: 950px;
+            .plus_table{
+                width: 100%;
+                h4{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #c0c0c0;
+                    border: 1px solid #c9c9c9;
+                }
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: calc(100% - 10px);
+                    box-sizing: border-box;
+                    margin: 5px;
+                    height: 30px;
+                    input{
+                    }
+                }
+            }
+
+            .plus_table.first {
+                font-size: 16px;
+            }
+        }
+        .plus_btn_wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 2px solid #c0c0c0;
+            border-bottom: 2px solid #c0c0c0;
+            margin: 10px 0 10px 0;
+            padding: 10px 0 10px 0;
+            .submit_btn {
+                width: 150px;
+                height: 32px;
+                background: #007ce2;
+                border: none;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .cancle_btn {
+                width: 150px;
+                height: 32px;
+                background: #bbbbbb;
+                border: none;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+        }
+    }
+}

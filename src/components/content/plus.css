@@ -1,0 +1,129 @@
+.plus_wrap .plus_header {
+  width: 950px;
+}
+
+.plus_wrap .plus_header .plus_header_warp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+.plus_wrap .plus_header .plus_header_warp .header_left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.plus_wrap .plus_header .plus_header_warp .header_left .header_left_text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #003366;
+}
+
+.plus_wrap .plus_header .plus_header_warp .header_left .header_left_btn {
+  color: white;
+  background: #113366;
+  border: none;
+  width: 45px;
+  height: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.plus_wrap .plus_header .plus_header_warp .header_right {
+  -webkit-box-flex: 1.1;
+      -ms-flex: 1.1;
+          flex: 1.1;
+  font-size: 14px;
+}
+
+.plus_wrap .plus_header .plus_warp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 950px;
+}
+
+.plus_wrap .plus_header .plus_warp .plus_table {
+  width: 100%;
+}
+
+.plus_wrap .plus_header .plus_warp .plus_table h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #c0c0c0;
+  border: 1px solid #c9c9c9;
+}
+
+.plus_wrap .plus_header .plus_warp .plus_table div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 10px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px;
+  height: 30px;
+}
+
+.plus_wrap .plus_header .plus_warp .plus_table.first {
+  font-size: 16px;
+}
+
+.plus_wrap .plus_header .plus_btn_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 2px solid #c0c0c0;
+  border-bottom: 2px solid #c0c0c0;
+  margin: 10px 0 10px 0;
+  padding: 10px 0 10px 0;
+}
+
+.plus_wrap .plus_header .plus_btn_wrap .submit_btn {
+  width: 150px;
+  height: 32px;
+  background: #007ce2;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.plus_wrap .plus_header .plus_btn_wrap .cancle_btn {
+  width: 150px;
+  height: 32px;
+  background: #bbbbbb;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+}
+/*# sourceMappingURL=plus.css.map */
