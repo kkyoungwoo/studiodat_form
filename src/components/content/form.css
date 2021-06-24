@@ -3,7 +3,29 @@
 }
 
 .main_color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #e4f3dd;
+  padding: 5px;
+}
+
+.title_text {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.fontsizeup {
+  font-size: 24px;
 }
 
 .form_wrap {
@@ -15,7 +37,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 950px;
-  background: white;
+  background: #ffffff;
 }
 
 .form_wrap .company_form {
@@ -27,10 +49,11 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "nav nav nav nav" "company company_text boss boss_text " "address address_text address_text address_text" "manager manager_text compony_position compony_position_text" "phone phone_text email email_text" "website website_text website_text website_text" "Field Field_text Field_text Field_text" "item item_text item_text item_text" "banner banner_text banner_text banner_text";
+      grid-template-areas: "company company_text boss boss_text " "address address_text address_text address_text" "manager manager_text compony_position compony_position_text" "phone phone_text email email_text" "website website_text website_text website_text" "Field Field_text Field_text Field_text" "item item_text item_text item_text" "banner banner_text banner_text banner_text";
   grid-gap: 0px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  margin-bottom: 30px;
 }
 
 .form_wrap .company_form nav {
@@ -43,148 +66,146 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
   grid-area: nav;
 }
 
 .form_wrap .company_form .form {
-  border: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .form_wrap .company_form .form.company {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: company;
 }
 
 .form_wrap .company_form .form.company_text {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: company_text;
 }
 
 .form_wrap .company_form .form.boss {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: boss;
 }
 
 .form_wrap .company_form .form.boss_text {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: boss_text;
 }
 
 .form_wrap .company_form .form.address {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: address;
 }
 
 .form_wrap .company_form .form.address_text {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: address_text;
 }
 
 .form_wrap .company_form .form.manager {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: manager;
 }
 
 .form_wrap .company_form .form.manager_text {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: manager_text;
 }
 
 .form_wrap .company_form .form.compony_position {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: compony_position;
 }
 
 .form_wrap .company_form .form.compony_position_text {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 4;
   grid-area: compony_position_text;
 }
 
 .form_wrap .company_form .form.phone {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: phone;
 }
 
 .form_wrap .company_form .form.phone_text {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: phone_text;
 }
 
 .form_wrap .company_form .form.email {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: email;
 }
 
 .form_wrap .company_form .form.email_text {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 4;
   grid-area: email_text;
 }
 
 .form_wrap .company_form .form.website {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: website;
 }
 
 .form_wrap .company_form .form.website_text {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: website_text;
 }
 
 .form_wrap .company_form .form.Field {
-  -ms-grid-row: 7;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   grid-area: Field;
 }
 
 .form_wrap .company_form .form.Field_text {
-  -ms-grid-row: 7;
+  -ms-grid-row: 6;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: Field_text;
 }
 
 .form_wrap .company_form .form.item {
-  -ms-grid-row: 8;
+  -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: item;
 }
 
 .form_wrap .company_form .form.item_text {
-  -ms-grid-row: 8;
+  -ms-grid-row: 7;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: item_text;
 }
 
 .form_wrap .company_form .form.banner {
-  -ms-grid-row: 9;
+  -ms-grid-row: 8;
   -ms-grid-column: 1;
   grid-area: banner;
 }
 
 .form_wrap .company_form .form.banner_text {
-  -ms-grid-row: 9;
+  -ms-grid-row: 8;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: banner_text;
@@ -201,12 +222,14 @@
       grid-template-rows: 1fr 1fr;
       grid-template-areas: "number number_input" "file file_input";
   grid-gap: 0px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  margin: 20px 0;
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
 }
 
 .form_wrap .business_Registration .Registration {
-  border: 1px solid #c0c0c0;
+  border-right: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
   padding: 5px;
 }
 
@@ -239,19 +262,36 @@
   display: grid;
   width: 100%;
   height: 100%;
-  -ms-grid-columns: .3fr .7fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: .3fr .7fr 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: "division division quantity quantity unit_price price" "boothname independent independent_ea independent_ea independent_ea_support independent_ea_support_total" "boothname nomal nomal_ea nomal_ea nomal_ea_support nomal_ea_support_total" "boothname premium premium_ea premium_ea premium_ea_support premium_ea_support_total" "elec one_phase one_phase_kw one_phase_kw one_phase_kw_won one_phase_kw_total" "elec two_phase two_phase_kw two_phase_kw two_phase_kw_won two_phase_kw_total" "elec three_phase three_phase_kw three_phase_kw three_phase_kw_won three_phase_kw_total" "tell ko ko_unit ko_unit ko_unit_won ko_unit_total" "tell global global_unit global_unit global_unit_won global_unit_total" "water water water_won water_won water_place water_place_total" "air air air_won air_won air_place air_place_total " "lan lan lan_port lan_port lan_port_won lan_port_total" "subtotal subtotal subtotal_total subtotal_total subtotal_total subtotal_total" "vat vat vat_total vat_total vat_total vat_total" "total total total_end total_end total_end total_end" "atc atc atc_text atc_text atc_text atc_text";
+  -ms-grid-columns: .5fr 1.8fr .4fr 1.2fr 1.3fr;
+      grid-template-columns: .5fr 1.8fr .4fr 1.2fr 1.3fr;
+  -ms-grid-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.3fr 1.3fr 1.3fr;
+      grid-template-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.3fr 1.3fr 1.3fr;
+      grid-template-areas: "division division quantity quantity unit_price price" "boothname independent independent_ea independent_ea independent_ea_support independent_ea_support_total" "boothname nomal nomal_ea nomal_ea nomal_ea_support nomal_ea_support_total" "boothname premium premium_ea premium_ea premium_ea_support premium_ea_support_total" "elec one_phase one_phase_kw one_phase_kw one_phase_kw_won one_phase_kw_total" "elec two_phase two_phase_kw two_phase_kw two_phase_kw_won two_phase_kw_total" "elec three_phase three_phase_kw three_phase_kw three_phase_kw_won three_phase_kw_total" "tell ko ko_unit ko_unit ko_unit_won ko_unit_total" "tell global global_unit global_unit global_unit_won global_unit_total" "water water water_place water_place water_won water_place_total" "air air air_place air_place air_won air_place_total " "lan lan lan_port lan_port lan_port_won lan_port_total" "subtotal subtotal subtotal_total subtotal_total subtotal_total subtotal_total" "vat vat vat_total vat_total vat_total vat_total" "total total total_end total_end total_end total_end" "atc atc atc_text atc_text atc_text atc_text";
   grid-gap: 0px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
   background: white;
 }
 
 .form_wrap .application .booth {
-  border: 1px solid #c0c0c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #c0c0c0;
+  border-right: 1px solid #c0c0c0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+}
+
+.form_wrap .application .booth.sub_color {
+  padding-left: 18px;
 }
 
 .form_wrap .application .booth.division {
@@ -491,13 +531,15 @@
 
 .form_wrap .application .booth.water_place {
   -ms-grid-row: 10;
-  -ms-grid-column: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
   grid-area: water_place;
 }
 
 .form_wrap .application .booth.air_place {
   -ms-grid-row: 11;
-  -ms-grid-column: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
   grid-area: air_place;
 }
 
@@ -510,8 +552,7 @@
 
 .form_wrap .application .booth.water_won {
   -ms-grid-row: 10;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 5;
   grid-area: water_won;
 }
 
@@ -547,15 +588,13 @@
 
 .form_wrap .application .booth.air_won {
   -ms-grid-row: 11;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 5;
   grid-area: air_won;
 }
 
 .form_wrap .application .booth.air_won {
   -ms-grid-row: 11;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 5;
   grid-area: air_won;
 }
 
@@ -703,5 +742,14 @@
   -ms-grid-row: 12;
   -ms-grid-column: 6;
   grid-area: lan_port_total;
+}
+
+.form_wrap .application .booth > input {
+  width: 130px;
+  margin: 0 5px;
+}
+
+.form_wrap .form > input {
+  margin: 5px;
 }
 /*# sourceMappingURL=form.css.map */

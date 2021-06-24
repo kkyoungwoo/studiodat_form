@@ -1,30 +1,27 @@
 import React from 'react'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import './plus.css'
 
 function Plus() {
 
-    const [plusNum,setPlusNum] = useState([])
-    const [plusName,setPlusName] = useState(2)
-    const [plusPosition,setPlusPosition] = useState(3)
+    const [plusNum,setPlusNum] = useState([0])
+    const [plusName,setPlusName] = useState("")
+    const [plusPosition,setPlusPosition] = useState("")
     const [plusPhoneNum,setPlusPhoneNum] = useState(4)
     const [plusText,setPlusText] = useState(5)
-    const [plusHandleDlete,setPlusHandleDlete] = useState(false)
 
     const plusMambers = useCallback(
         () => {
-                const array = [...plusNum]
-                array.push([])
-                setPlusNum(array)
-                console.log(plusNum)
+            const array = [...plusNum]
+            array.push(plusNum.length)
+            setPlusNum(array)
         },
-        [plusNum],
+        [plusNum]
     )
 
     const handleDelete = (idx) => {
-        const Delet = plusNum.splice(plusNum.length, 1)
-        console.log(plusNum)
-        setPlusNum(Delet)
+            const Delet = plusNum.filter((_,idxx) => idx !== idxx)
+            setPlusNum(Delet)
     }
 
     return (
@@ -48,7 +45,7 @@ function Plus() {
                             <h4>번호</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={idx}>{idx + 1}</div>
+                                    <div key={item}>{idx + 1}</div>
                                 )
                             })}
                         </div>
@@ -56,8 +53,8 @@ function Plus() {
                             <h4>성명</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={idx}>
-                                        <input type="text" />
+                                    <div key={item}>
+                                        <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
                                     </div>
                                 )
                             })}
@@ -66,8 +63,8 @@ function Plus() {
                             <h4>직함</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={idx}>
-                                        <input type="text" />
+                                    <div key={item}>
+                                        <input type="text" onChange={(e) => {setPlusPosition(e.target.value)}}/>
                                     </div>
                                 )
                             })}
@@ -76,8 +73,8 @@ function Plus() {
                             <h4>연락처</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={idx}>
-                                        <input type="text" />
+                                    <div key={item}>
+                                        <input type="text" onChange={(e) => {setPlusPhoneNum(e.target.value)}}/>
                                     </div>
                                 )
                             })}
@@ -86,8 +83,8 @@ function Plus() {
                             <h4>비고</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={idx}>
-                                        <input type="text" />
+                                    <div key={item}>
+                                        <input type="text" onChange={(e) => {setPlusText(e.target.value)}}/>
                                     </div>
                                 )
                             })}
@@ -96,8 +93,8 @@ function Plus() {
                             <h4>-</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={idx}>
-                                        <button onClick={() => handleDelete(idx)}>
+                                    <div key={item}>
+                                        <button onClick={() => (handleDelete(idx))}>
                                             삭제
                                         </button>
                                     </div>

@@ -1,8 +1,33 @@
-import React from 'react'
-import Form from './Form'
+import React, { useEffect, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import './agree.css'
 
-function Agree() {
+function Agree(props) {
+
+    props.setIsMe(false)
+    
+    const [isToggle,setIsToggle] = useState(false);
+    const [isJoin,setIsJoin] = useState("/");
+
+    const isToggleBtn = useCallback(() => {
+      setIsToggle(!(isToggle))
+    },[isToggle])
+
+    const defalt = useEffect(() =>{
+        if(isToggle === true){
+            setIsJoin("/form")
+        }else{
+            setIsJoin("/booth_form")
+        }
+    })
+
+    const joinForm = useCallback(() =>{
+        if(isToggle === true){
+        }else{
+            alert('참가규정에 동의해 주세요')
+        }
+    })
+
     return (
         <div className="agreepage">
             <div className="agreetext">
@@ -54,9 +79,12 @@ function Agree() {
                 <br />본 참가규정의 해석에 관하여 주최자와 전시자간에 발생하는 쌍방 간의 권리, 의무에 관한 분쟁은 대구지방관할 법원의 판정을 따른다.
             </div>
             <div className="agreechackbox">
-                <span className="input_chack"><input type="checkbox" /></span>
+                <span className="input_chack"><input type="checkbox" onClick={isToggleBtn}/></span>
                 <span className="input_chacktext">위의 참가규정에 동의합니다.</span>
             </div>
+            <Link to ={isJoin}><button className="attend" onClick={joinForm}>
+                온라인 참가신청
+            </button></Link>
         </div>
     )
 }
