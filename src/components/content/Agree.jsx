@@ -4,7 +4,7 @@ import './agree.css'
 
 function Agree(props) {
 
-    props.setIsMe(false)
+    useEffect(() => {props.setIsMe(false)})
     
     const [isToggle,setIsToggle] = useState(false);
     const [isJoin,setIsJoin] = useState("/");
@@ -26,7 +26,7 @@ function Agree(props) {
         }else{
             alert('참가규정에 동의해 주세요')
         }
-    })
+    },[isToggle])
 
     return (
         <div className="agreepage">

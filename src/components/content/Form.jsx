@@ -4,7 +4,7 @@ import './form.css'
 
 function Form(props) {
 
-    props.setIsMe(false)
+    useEffect(() => {props.setIsMe(false)})
     //독립부스
     const [phBoothOne,setPhBoothOne] = useState(0)
     //기본부스

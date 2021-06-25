@@ -4,7 +4,7 @@ import Privacy from './Privacy'
 import './observe.css'
 function Observe_group(props) {
 
-    props.setIsMe(false)
+    useEffect(() => {props.setIsMe(false)})
 
     const [agreeBtn,setAgreeBtn] = useState(false)
     const [pathLink,setPathLink] = useState("/")

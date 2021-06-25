@@ -26,7 +26,7 @@
   height: 100%;
   -ms-grid-columns: 150px 1fr 150px 1fr;
       grid-template-columns: 150px 1fr 150px 1fr;
-      grid-template-areas: "Privacy_groupname Privacy_groupname_text Privacy_name Privacy_name_text" "Privacy_phone Privacy_phone_text Privacy_position Privacy_position_text" "Privacy_number Privacy_number_text Privacy_email Privacy_email_text" "Privacy_address Privacy_address_script Privacy_address_script Privacy_address_script" "Privacy_address Privacy_address_text Privacy_address_text Privacy_address_text" "Privacy_list Privacy_list_text Privacy_list_text Privacy_list_text" "Privacy_day Privacy_day_box Privacy_day_box Privacy_day_box";
+      grid-template-areas: "Privacy_groupname Privacy_groupname_text Privacy_name Privacy_name_text" "Privacy_phone Privacy_phone_text Privacy_position Privacy_position_text" "Privacy_number Privacy_number_text Privacy_email Privacy_email_text" "Privacy_address Privacy_address_script Privacy_address_script Privacy_address_script" "Privacy_address Privacy_address_text Privacy_address_text Privacy_address_text" "Privacy_list Privacy_list_text Privacy_list_text Privacy_list_text" "Privacy_day Privacy_day_box Privacy_day_box Privacy_day_box";
   grid-gap: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

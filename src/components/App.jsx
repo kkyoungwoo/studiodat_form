@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Link to="/" >
         <div className="maintext" onClick={
-          {mainPageIsMe}
+          mainPageIsMe
         }>온라인 참가신청</div>
       </Link>
       <div className={ isMe ? 'link_tree display_flex' : 'link_tree display_none' } >
