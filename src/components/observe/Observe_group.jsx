@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useState,useCallback,useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Privacy from './Privacy'
 import './observe.css'
 function Observe_group(props) {
 
     props.setIsMe(false)
+
+    const [agreeBtn,setAgreeBtn] = useState(false)
+    const [pathLink,setPathLink] = useState("/")
+    const [failurePath,setFailurePath] = useState("/")
+
+    const BtnClick = useCallback(()=>{
+        setAgreeBtn(!agreeBtn)
+    })
+
+    useEffect(() => {
+        if(agreeBtn === true){
+            setPathLink('/')
+        }else{
+            setPathLink('/observe_group')
+        }
+    },[agreeBtn])
+
+    const BtnJoin = useCallback(()=>{
+        agreeBtn ? alert('신청이 완료되었습니다.') : alert('개인정보 취급방침에 동의해주세요')
+    })
 
     return (
         <div>
@@ -11,7 +32,7 @@ function Observe_group(props) {
             <div>
                 < Privacy />
                 <div className="agree_box">
-                    <input type="checkbox" />
+                    <input type="checkbox" onClick={BtnClick}/>
                     개인정보취급방침 동의합니다.
                 </div>
             </div>
@@ -69,8 +90,12 @@ function Observe_group(props) {
                 </div>
             </div>
             <div className="sesses_wrap">
-                <div className="secces">참관신청하기</div>
-                <div className="failure">취소하기</div>
+                <Link to={pathLink}>
+                <div className="secces" onClick={BtnJoin}>참관신청하기</div>
+                </Link>
+                <Link to={failurePath}>
+                    <div className="failure" onClick={()=>alert("메인화면으로 이동합니다")}>취소하기</div>
+                </Link>
             </div>
         </div>
     )

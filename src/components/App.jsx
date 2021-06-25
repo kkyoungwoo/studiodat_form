@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from 'react'
+import React, { useState,useCallback,useEffect } from 'react'
 import './app.css';
 import Agree from './content/Agree'
 import Form from './content/Form'
@@ -11,15 +11,18 @@ function App() {
   const [isMe,setIsMe] = useState(true)
 
   const handleClick = useCallback(()=>{
-    console.log(isMe)
     isMe === true ? setIsMe(!true) : setIsMe(false)
+  },[isMe])
+
+  const mainPageIsMe = useCallback(()=>{
+    setIsMe(true)
   },[isMe])
 
   return (
     <div className="App">
-      <Link to="/">
+      <Link to="/" >
         <div className="maintext" onClick={
-          () => setIsMe(true)
+          {mainPageIsMe}
         }>온라인 참가신청</div>
       </Link>
       <div className={ isMe ? 'link_tree display_flex' : 'link_tree display_none' } >
@@ -28,7 +31,7 @@ function App() {
         }>
         참가업체 부스신청
         </Link>
-        <Link to="/Observe_group" className="event_box" onClick={
+        <Link to="/observe_group" className="event_box" onClick={
           handleClick
         }>
           참관객 개인 온라인 사전등록

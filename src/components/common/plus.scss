@@ -49,13 +49,15 @@
                     box-sizing: border-box;
                     margin: 5px;
                     height: 30px;
-                    input{
+                }
+                .cancle0 {
+                    button {
+                        display: none;
                     }
                 }
-            }
-
-            .plus_table.first {
-                font-size: 16px;
+                button{
+                    width: 50px;
+                }
             }
         }
         .plus_btn_wrap{

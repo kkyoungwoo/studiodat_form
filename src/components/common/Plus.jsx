@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useCallback, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './plus.css'
 
 function Plus() {
@@ -10,6 +11,10 @@ function Plus() {
     const [plusPhoneNum,setPlusPhoneNum] = useState(4)
     const [plusText,setPlusText] = useState(5)
 
+    const submitJoin = useCallback(()=>{
+        alert("신청이 완료되었습니다.")
+    })
+    
     const plusMambers = useCallback(
         () => {
             const array = [...plusNum]
@@ -93,7 +98,7 @@ function Plus() {
                             <h4>-</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={item}>
+                                    <div key={item}  className={"cancle"+idx}>
                                         <button onClick={() => (handleDelete(idx))}>
                                             삭제
                                         </button>
@@ -103,8 +108,10 @@ function Plus() {
                         </div>
                     </div>
                     <div className="plus_btn_wrap">
-                        <button className="submit_btn">참가신청</button>
-                        <button className="cancle_btn">취소하기</button>
+                        <Link to="/">
+                            <button className="submit_btn" onClick={submitJoin}>참가신청</button>
+                            <button className="cancle_btn" onClick={()=>alert("메인화면으로 이동합니다.")}>취소하기</button>
+                        </Link>
                     </div>
                 </div>
             </div>

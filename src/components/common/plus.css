@@ -86,8 +86,12 @@
   height: 30px;
 }
 
-.plus_wrap .plus_header .plus_warp .plus_table.first {
-  font-size: 16px;
+.plus_wrap .plus_header .plus_warp .plus_table .cancle0 button {
+  display: none;
+}
+
+.plus_wrap .plus_header .plus_warp .plus_table button {
+  width: 50px;
 }
 
 .plus_wrap .plus_header .plus_btn_wrap {

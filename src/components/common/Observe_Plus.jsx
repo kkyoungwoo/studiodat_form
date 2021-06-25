@@ -1,14 +1,14 @@
-import React from 'react'
 import { useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import './plus.css'
 
 function Observe_Plus() {
 
-    const [plusNum,setPlusNum] = useState([0])
-    const [plusName,setPlusName] = useState("")
-    const [plusPosition,setPlusPosition] = useState("")
-    const [plusPhoneNum,setPlusPhoneNum] = useState(4)
-    const [plusText,setPlusText] = useState(5)
+    const [plusNum,setPlusNum] = useState([1])
+
+    const submitJoin = useCallback(()=>{
+        alert("신청이 완료되었습니다.")
+    })
 
     const plusMambers = useCallback(
         () => {
@@ -30,61 +30,58 @@ function Observe_Plus() {
                 <div className="plus_header">
                     <div className="plus_header_warp">
                         <div className="header_left">
-                            <div className="header_left_text">· 출입증신청</div>
+                            <div className="header_left_text">· 추가인원</div>
                             <button className="header_left_btn" onClick={plusMambers}>추가</button>
-                        </div>
-                        <div className="header_right">
-                                · 박람회장 내 출입증 미소지시 출입이 불가능합니다.
-                                <br />· 참가업체 직원 중 전시장에서 항시 상주하는 인원 수 만큼 신청하시기 바랍니다.
-                                <br />· 출입증 수령장소 : EXCO 서관 로비(1층) 등록데스크
-                                <br />· 배포일시 : 2021년 10월 14일(목) 오전 8시 ~ 전시기간중
+                            <div className="sub_text">인원을 추가로 입력하시려면'추가'버튼을 눌러주세요</div>
                         </div>
                     </div>
                     <div className="plus_warp">
-                        <div className="plus_table first">
-                            <h4>번호</h4>
-                            {plusNum.map((item,idx) => {
-                                return(
-                                    <div key={item}>{idx + 1}</div>
-                                )
-                            })}
-                        </div>
-                        <div className="plus_table">
-                            <h4>성명</h4>
+                        <div className="plus_table first" >
+                            <h4>회사명</h4>
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                                        <input type="text" style={{width:"120px"}}/>
                                     </div>
                                 )
                             })}
                         </div>
                         <div className="plus_table">
-                            <h4>직함</h4>
+                            <h4>부서/직위</h4>
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusPosition(e.target.value)}}/>
+                                        <input type="text"/>
                                     </div>
                                 )
                             })}
                         </div>
                         <div className="plus_table">
-                            <h4>연락처</h4>
+                            <h4>이름</h4>
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusPhoneNum(e.target.value)}}/>
+                                        <input type="text"/>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className="plus_table">
+                            <h4>휴대전화</h4>
+                            {plusNum.map((item,idx) => {
+                                return(
+                                    <div key={item}>
+                                        <input type="text"/>
                                     </div>
                                 )
                             })}
                         </div >
                         <div className="plus_table">
-                            <h4>비고</h4>
+                            <h4>이메일</h4>
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusText(e.target.value)}}/>
+                                        <input type="text"/>
                                     </div>
                                 )
                             })}
@@ -93,7 +90,7 @@ function Observe_Plus() {
                             <h4>-</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={item}>
+                                    <div key={item} className={"cancle"+idx}>
                                         <button onClick={() => (handleDelete(idx))}>
                                             삭제
                                         </button>
@@ -103,8 +100,10 @@ function Observe_Plus() {
                         </div>
                     </div>
                     <div className="plus_btn_wrap">
-                        <button className="submit_btn">참가신청</button>
-                        <button className="cancle_btn">취소하기</button>
+                        <Link to="/">
+                            <button className="submit_btn" onClick={submitJoin}>참가신청</button>
+                            <button className="cancle_btn" onClick={()=>alert("메인화면으로 이동합니다.")}>취소하기</button>
+                        </Link>
                     </div>
                 </div>
             </div>
