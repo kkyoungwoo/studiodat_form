@@ -425,32 +425,26 @@
     .form>input {
         margin: 5px;
     }
-    .plus_btn_wrap{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-top: 2px solid #c0c0c0;
-        border-bottom: 2px solid #c0c0c0;
-        margin: 10px 0 10px 0;
-        padding: 10px 0 10px 0;
-        .submit_btn {
-            width: 150px;
-            height: 32px;
-            background: #007ce2;
-            border: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .cancle_btn {
-            width: 150px;
-            height: 32px;
-            background: #bbbbbb;
-            border: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            margin-left: 5px;
-        }
+    .submit_btn {
+        width: 150px;
+        height: 32px;
+        background: #007ce2;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 50px;
+        margin-left: 322.5px;
+    }
+
+    .cancle_btn {
+        width: 150px;
+        height: 32px;
+        background: #bbbbbb;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 5px;
     }
 }

@@ -27,7 +27,7 @@ function Observe_Plus() {
                     <div className="plus_header_warp">
                         <div className="header_left">
                             <div className="header_left_text">· 추가인원</div>
-                            <button className="header_left_btn" onClick={plusMambers}>추가</button>
+                            <div className="header_left_btn" onClick={plusMambers}>추가</div>
                             <div className="sub_text">인원을 추가로 입력하시려면'추가'버튼을 눌러주세요</div>
                         </div>
                     </div>
@@ -87,9 +87,9 @@ function Observe_Plus() {
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item} className={"cancle"+idx}>
-                                        <button onClick={() => (handleDelete(idx))}>
+                                        <div className="btn_close" onClick={() => (handleDelete(idx))}>
                                             삭제
-                                        </button>
+                                        </div>
                                     </div>
                                 )
                             })}

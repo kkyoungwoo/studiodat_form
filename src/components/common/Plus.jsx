@@ -3,24 +3,24 @@ import { useState, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './plus.css'
 
-function Plus() {
+function Plus(props) {
 
     const [plusNum,setPlusNum] = useState([0])
-    const [plusName,setPlusName] = useState("")
-    const [plusPosition,setPlusPosition] = useState("")
-    const [plusPhoneNum,setPlusPhoneNum] = useState(4)
-    const [plusText,setPlusText] = useState(5)
+    const [plusName,setPlusName] = useState()
+    const [plusPosition,setPlusPosition] = useState()
+    const [plusPhoneNum,setPlusPhoneNum] = useState()
+    const [plusText,setPlusText] = useState()
     
     const plusMambers = useCallback(
         () => {
             const array = [...plusNum]
-            array.push(plusNum.length)
+            array.push(plusNum.get)
             setPlusNum(array)
         },
         [plusNum]
-    )
-
-    const handleDelete = (idx) => {
+        )
+        
+        const handleDelete = (idx) => {
             const Delet = plusNum.filter((_,idxx) => idx !== idxx)
             setPlusNum(Delet)
     }
@@ -32,7 +32,7 @@ function Plus() {
                     <div className="plus_header_warp">
                         <div className="header_left">
                             <div className="header_left_text">· 출입증신청</div>
-                            <button className="header_left_btn" onClick={plusMambers}>추가</button>
+                            <div className="header_left_btn" onClick={plusMambers}>추가</div>
                         </div>
                         <div className="header_right">
                                 · 박람회장 내 출입증 미소지시 출입이 불가능합니다.
@@ -95,9 +95,9 @@ function Plus() {
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item}  className={"cancle"+idx}>
-                                        <button onClick={() => (handleDelete(idx))}>
+                                        <div className="btn_close" onClick={() => (handleDelete(idx))}>
                                             삭제
-                                        </button>
+                                        </div>
                                     </div>
                                 )
                             })}

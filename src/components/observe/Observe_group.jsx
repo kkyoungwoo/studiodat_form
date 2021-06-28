@@ -6,6 +6,33 @@ import emailjs from 'emailjs-com';
 import Kakaomap from '../common/Kakaomap'
 function Observe_group(props) {
 
+    //단체명
+    const [groupName,setGroupName] = useState(0)
+    //담당자성명
+    const [name,setName] = useState(0)
+    //담당자연락처
+    const [phone,setPhone] = useState(0)
+    //직위
+    const [position,setPosition] = useState(0)
+    //담당자휴대전화
+    const [number,setNumber] = useState(0)
+    //이메일
+    const [email,setEmail] = useState(0)
+    //주소
+    const [addres,setAddres] = useState(0)
+    //상세주소
+    const [address,setAddress] = useState(0)
+    //참관객 명단
+    const [list,setList] = useState(0)
+    //참관예정일자
+    const [day,setDay] = useState("")
+    const [days,setDays] = useState("")
+    const [dayss,setDayss] = useState("")
+
+    const submitJoin = useCallback(()=>{
+        alert("신청이 완료되었습니다.")
+    })
+
     useEffect(() => {props.setIsMe(false)})
 
     const [agreeBtn,setAgreeBtn] = useState(false)
@@ -39,8 +66,46 @@ function Observe_group(props) {
           });
       }
 
+    const [isMe,setIsMe] = useState(true)
+    const [isMine,setMine] = useState(true)
+    const [isI,setI] = useState(true)
+
+    const ismeFunk = useCallback(() =>{
+        setIsMe(!isMe)
+        isMe ? setDay("2021-10-14 (목)") : setDay("")
+    },[isMe])
+
+    const ismeFunks = useCallback(() =>{
+        setMine(!isMine)
+        isMine ? setDays("2021-10-15 (금)") : setDays("")
+    },[isMine])
+
+    const ismeFunkss = useCallback(() =>{
+        setI(!isI)
+        isI ? setDayss("2021-10-16 (토)") : setDayss("")
+    },[isI])
+
     return (
         <div>
+            <form className="contact-form" onSubmit={sendEmail}>
+                <input className="displaynone" type="hidden" name="contact_number" />
+                <label className="displaynone">Name</label>
+                <input className="displaynone" type="text" name="user_name" />
+                <label className="displaynone">Email</label>
+                <input className="displaynone" type="email" name="user_email" />
+                <label className="displaynone">Message</label>
+                <textarea className="displaynone" name="message" value={
+                    " 단체명 :"+groupName+
+                    " , 담당자성명 :"+name+
+                    " , 담당자연락처 :"+phone+
+                    " , 직위 :"+position+
+                    " , 담당자휴대전화 :"+number+
+                    " , 이메일 :"+email+
+                    " , 주소 :"+addres+
+                    " , 상세주소 :"+address+
+                    " , 참관객 명단 :"+list+
+                    " , 참관예정일자 :"+day+days+dayss
+                }/>
             <div className="title_text fontsizeup">단체 온라인 참관신청</div>
             <div>
                 < Privacy />
@@ -54,61 +119,56 @@ function Observe_group(props) {
                 <div className="Privacy_forms">
                     <div className="Privacy_form Privacy_groupname title_color">단체명</div>
                     <div className="Privacy_form Privacy_groupname_text">
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setGroupName(e.target.value)}/>
                     </div>
 
                     <div className="Privacy_form Privacy_name title_color">담당자성명</div>
                     <div className="Privacy_form Privacy_name_text">
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setName(e.target.value)}/>
                     </div>
 
                     <div className="Privacy_form Privacy_phone title_color">담당자연락처</div>
                     <div className="Privacy_form Privacy_phone_text">
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setPhone(e.target.value)}/>
                     </div>
 
                     <div className="Privacy_form Privacy_position title_color">직위</div>
                     <div className="Privacy_form Privacy_position_text">
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setPosition(e.target.value)}/>
                     </div>
 
                     <div className="Privacy_form Privacy_number title_color">담당자휴대전화</div>
                     <div className="Privacy_form Privacy_number_text">
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setNumber(e.target.value)}/>
                     </div>
                     <div className="Privacy_form Privacy_email title_color">이메일</div>
                     <div className="Privacy_form Privacy_email_text">
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="Privacy_form Privacy_address title_color">주소</div>
                     <div className="Privacy_form Privacy_address_script">
-                    < Kakaomap/>
+                    < Kakaomap setAddress={setAddress}/>
                     </div>
                     <div className="Privacy_form Privacy_address_text">
                         <span className="text_margin">상세주소</span>
-                        <input type="text" />
+                        <input type="text" onChange={(e) => setAddres(e.target.value)}/>
                     </div>
 
                     <div className="Privacy_form Privacy_list title_color">참관객명단</div>
                     <div className="Privacy_form Privacy_list_text">
-                        <input type="text" placeholder="기능 구현 대기"/>
+                        <input type="file"/>
                     </div>
                     <div className="Privacy_form Privacy_day title_color">참관예정일자</div>
                     <div className="Privacy_form Privacy_day_box">
-                        <input type="checkbox" />2021-10-14 (목)
-                        <br/><input type="checkbox" />2021-10-15 (금)
-                        <br/><input type="checkbox" />2021-10-16 (토)
+                        <input onChange={ismeFunk} type="checkbox" />2021-10-14 (목)
+                        <br/><input onChange={ismeFunks} type="checkbox" />2021-10-15 (금)
+                        <br/><input onChange={ismeFunkss} type="checkbox" />2021-10-16 (토)
                     </div>
                 </div>
             </div>
-            <div className="sesses_wrap">
-                <Link to={pathLink}>
-                <div className="secces" onClick={BtnJoin}>참관신청하기</div>
-                </Link>
-                <Link to={failurePath}>
-                    <div className="failure" onClick={()=>alert("메인화면으로 이동합니다")}>취소하기</div>
-                </Link>
-            </div>
+            <input type="submit" className="secces" onClick={submitJoin} value="참관신청하기"/>
+            <button className="failure" onClick={()=>alert("메인화면으로 이동합니다.")}>취소하기</button>
+            </form>
         </div>
     )
 }

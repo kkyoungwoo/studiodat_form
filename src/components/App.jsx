@@ -34,12 +34,12 @@ function App() {
         <Link to="/observe_group" className="event_box" onClick={
           handleClick
         }>
-          참관객 개인 온라인 사전등록
+          참관객 단체 온라인 사전등록
         </Link>
         <Link to="/observe_individual" className="event_box" onClick={
           handleClick
         }>
-          참관객 단체 온라인 사전등록
+          참관객 개인 온라인 사전등록
         </Link>
       </div>
 

@@ -4,6 +4,7 @@ import './kakao.css'
  
 
 const Kakaomap = ({ history }) => {
+
   const [location, setLocation] = useState(null);
   const [zipcode, setZip] = useState(null);
   const [select, setSelect] = useState(false);
@@ -31,6 +32,7 @@ const Kakaomap = ({ history }) => {
     }
     setZip(data.zonecode);
     setLocation(fullAddress);
+    history.setAddress(fullAddress)
   };
 
   return (

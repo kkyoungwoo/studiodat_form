@@ -49,7 +49,7 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "company company_text boss boss_text " "address address_text address_text address_text" "manager manager_text compony_position compony_position_text" "phone phone_text email email_text" "website website_text website_text website_text" "Field Field_text Field_text Field_text" "item item_text item_text item_text" "banner banner_text banner_text banner_text";
+      grid-template-areas: "company company_text boss boss_text " "address address_text address_text address_text" "manager manager_text compony_position compony_position_text" "phone phone_text email email_text" "website website_text website_text website_text" "Field Field_text Field_text Field_text" "item item_text item_text item_text" "banner banner_text banner_text banner_text";
   grid-gap: 0px;
   border-top: 1px solid black;
   border-left: 1px solid black;
@@ -220,7 +220,7 @@
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      grid-template-areas: "number number_input" "file file_input";
+      grid-template-areas: "number number_input" "file file_input";
   grid-gap: 0px;
   margin: 20px 0;
   border-top: 1px solid #c0c0c0;
@@ -266,7 +266,7 @@
       grid-template-columns: .5fr 1.8fr .4fr 1.2fr 1.3fr;
   -ms-grid-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.3fr 1.3fr 1.3fr;
       grid-template-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.3fr 1.3fr 1.3fr;
-      grid-template-areas: "division division quantity quantity unit_price price" "boothname independent independent_ea independent_ea independent_ea_support independent_ea_support_total" "boothname nomal nomal_ea nomal_ea nomal_ea_support nomal_ea_support_total" "boothname premium premium_ea premium_ea premium_ea_support premium_ea_support_total" "elec one_phase one_phase_kw one_phase_kw one_phase_kw_won one_phase_kw_total" "elec two_phase two_phase_kw two_phase_kw two_phase_kw_won two_phase_kw_total" "elec three_phase three_phase_kw three_phase_kw three_phase_kw_won three_phase_kw_total" "tell ko ko_unit ko_unit ko_unit_won ko_unit_total" "tell global global_unit global_unit global_unit_won global_unit_total" "water water water_place water_place water_won water_place_total" "air air air_place air_place air_won air_place_total " "lan lan lan_port lan_port lan_port_won lan_port_total" "subtotal subtotal subtotal_total subtotal_total subtotal_total subtotal_total" "vat vat vat_total vat_total vat_total vat_total" "total total total_end total_end total_end total_end" "atc atc atc_text atc_text atc_text atc_text";
+      grid-template-areas: "division division quantity quantity unit_price price" "boothname independent independent_ea independent_ea independent_ea_support independent_ea_support_total" "boothname nomal nomal_ea nomal_ea nomal_ea_support nomal_ea_support_total" "boothname premium premium_ea premium_ea premium_ea_support premium_ea_support_total" "elec one_phase one_phase_kw one_phase_kw one_phase_kw_won one_phase_kw_total" "elec two_phase two_phase_kw two_phase_kw two_phase_kw_won two_phase_kw_total" "elec three_phase three_phase_kw three_phase_kw three_phase_kw_won three_phase_kw_total" "tell ko ko_unit ko_unit ko_unit_won ko_unit_total" "tell global global_unit global_unit global_unit_won global_unit_total" "water water water_place water_place water_won water_place_total" "air air air_place air_place air_won air_place_total " "lan lan lan_port lan_port lan_port_won lan_port_total" "subtotal subtotal subtotal_total subtotal_total subtotal_total subtotal_total" "vat vat vat_total vat_total vat_total vat_total" "total total total_end total_end total_end total_end" "atc atc atc_text atc_text atc_text atc_text";
   grid-gap: 0px;
   border-top: 1px solid #c0c0c0;
   border-left: 1px solid #c0c0c0;
@@ -753,23 +753,7 @@
   margin: 5px;
 }
 
-.form_wrap .plus_btn_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-top: 2px solid #c0c0c0;
-  border-bottom: 2px solid #c0c0c0;
-  margin: 10px 0 10px 0;
-  padding: 10px 0 10px 0;
-}
-
-.form_wrap .plus_btn_wrap .submit_btn {
+.form_wrap .submit_btn {
   width: 150px;
   height: 32px;
   background: #007ce2;
@@ -777,9 +761,11 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 50px;
+  margin-left: 322.5px;
 }
 
-.form_wrap .plus_btn_wrap .cancle_btn {
+.form_wrap .cancle_btn {
   width: 150px;
   height: 32px;
   background: #bbbbbb;

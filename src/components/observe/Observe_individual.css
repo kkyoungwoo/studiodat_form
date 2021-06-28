@@ -25,7 +25,7 @@
   height: 100%;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: "individual_name individual_name" "individual_phone individual_phone" "individual_address individual_address" "individual_email individual_email" "individual_company individual_positon" "individual_gender individual_gender" "individual_age individual_age" "individual_class individual_class";
+      grid-template-areas: "individual_name individual_name" "individual_phone individual_phone" "individual_address individual_address" "individual_email individual_email" "individual_company individual_positon" "individual_gender individual_gender" "individual_age individual_age" "individual_class individual_class";
   grid-gap: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -178,7 +178,7 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "elementary middles two three" "four five six seven" "notice notice notice notice";
+      grid-template-areas: "elementary middles two three" "four five six seven" "notice notice notice notice";
   height: 80px;
   width: calc(100% - 200px);
   -webkit-box-sizing: border-box;
@@ -262,7 +262,7 @@
   height: 100%;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      grid-template-areas: "individual_company" "individual_purpose" "individual_pathway" "individual_comInterestpany";
+      grid-template-areas: "individual_company" "individual_purpose" "individual_pathway" "individual_comInterestpany";
   grid-gap: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -356,23 +356,7 @@
   grid-area: individual_comInterestpany;
 }
 
-.individual_componets .plus_btn_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-top: 2px solid #c0c0c0;
-  border-bottom: 2px solid #c0c0c0;
-  margin: 10px 0 10px 0;
-  padding: 10px 0 10px 0;
-}
-
-.individual_componets .plus_btn_wrap .submit_btn {
+.individual_componets .submit_btn {
   width: 150px;
   height: 32px;
   background: #007ce2;
@@ -380,9 +364,11 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 50px;
+  margin-left: 322.5px;
 }
 
-.individual_componets .plus_btn_wrap .cancle_btn {
+.individual_componets .cancle_btn {
   width: 150px;
   height: 32px;
   background: #bbbbbb;
