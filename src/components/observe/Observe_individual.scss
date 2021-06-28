@@ -1,5 +1,22 @@
 .individual_componets{
     width: 950px;
+
+    .kakaomap.none{
+        display:none;
+        position: absolute;
+        left: 193px;
+        top:310px;
+        background: #c9c9c9;
+    }
+
+    .kakaomap.block{
+        display:block;
+        position: absolute;
+        left: 193px;
+        top:310px;
+        background: #c9c9c9;
+    }
+
     .individual_wrap {
         .title{
             border-right: 1px solid #666666;
@@ -207,5 +224,32 @@
             grid-area: individual_comInterestpany;
         }
     }
-
+    .plus_btn_wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid #c0c0c0;
+        border-bottom: 2px solid #c0c0c0;
+        margin: 10px 0 10px 0;
+        padding: 10px 0 10px 0;
+        .submit_btn {
+            width: 150px;
+            height: 32px;
+            background: #007ce2;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cancle_btn {
+            width: 150px;
+            height: 32px;
+            background: #bbbbbb;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    }
 }

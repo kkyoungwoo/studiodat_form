@@ -1,15 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState,useCallback } from 'react'
 import './Observe_individual.css'
 import Observe_Plus from '../common/Observe_Plus'
 import Kakaomap from '../common/Kakaomap'
+import { Link } from 'react-router-dom'
+import emailjs from 'emailjs-com';
 
 function Observe_individual(props) {
 
-    useEffect(() => {props.setIsMe(false)})
+    const submitJoin = useCallback(()=>{
+        alert("신청이 완료되었습니다.")
+    })
+
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_spdcidi', 'template_zau8w0f', e.target, 'user_YOvzVUT3C3OBySLzLPves')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }
 
     return (
         <div className="individual_componets">
-            <Kakaomap />
+            <div className={"kakaomap "}></div>
             <div className="title_text fontsizeup">개인 온라인 참관신청</div>
             <div className="title_text" >기본정보</div>
             <div className="individual_wrap">
@@ -29,7 +44,7 @@ function Observe_individual(props) {
                     <div className="title">주소</div>
                     <div className="text">
                         <div className="script_wrap">
-                            <input type="button"  value="우편번호 찾기"/>
+                            <Kakaomap />
                         </div>
                         <div>
                             상세주소<input type="text" />
@@ -167,6 +182,13 @@ function Observe_individual(props) {
                 </div>
             </div>
             <Observe_Plus />
+            
+            <div className="plus_btn_wrap">
+                <Link to="/">
+                    <button className="submit_btn" onClick={submitJoin}>참가신청</button>
+                    <button className="cancle_btn" onClick={()=>alert("메인화면으로 이동합니다.")}>취소하기</button>
+                </Link>
+            </div>
         </div>
     )
 }

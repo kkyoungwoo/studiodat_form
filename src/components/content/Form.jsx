@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import Plus from '../common/Plus'
+import emailjs from 'emailjs-com';
+import { Link } from 'react-router-dom'
 import './form.css'
 
 function Form(props) {
 
     useEffect(() => {props.setIsMe(false)})
     //독립부스
-    const [phBoothOne,setPhBoothOne] = useState(0)
+    const [phBoothOne,setPhBoothOne] = useState("독립부스")
     //기본부스
     const [phBoothTwo,setPhBoothTwo] = useState(0)
     //프리미엄부스
-    const [phBoothThree,setPhBoothThree] = useState(0)
+    const [phBoothThree,setPhBoothThree] = useState(3)
     //단상220v
     const [phEvOne,setPhEvOne] = useState(0)
     //삼상220v
@@ -42,8 +44,35 @@ function Form(props) {
         setPhTotal(phSubTotal+phVat)
     })
 
+    const submitJoin = useCallback(()=>{
+        alert("신청이 완료되었습니다.")
+    })
+
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_spdcidi', 'template_zau8w0f', e.target, 'user_YOvzVUT3C3OBySLzLPves')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }
+
     return (
-        <div className="form_wrap">
+        <div className="form_wrap contact-form">
+            <form className="contact-form" onSubmit={sendEmail}>
+                <input type="hidden" name="contact_number" />
+                <label>Name</label>
+                <input type="text" name="user_name" />
+                <label>Email</label>
+                <input type="email" name="user_email" />
+                <label>Message</label>
+                <textarea name="message" value={
+                    "독립부스"+phBoothOne+",기본부스"+phBoothTwo
+                }/>
+                <input type="submit" value="Send" />
+            </form>
             <nav className="title_text">주최측에서 제공하는 <span>[참가업체 메뉴얼]</span>을 반드시 확인하신 후 참가 신청해주시기 바랍니다.</nav>
             <div className="company_form">
                 <div className="form company main_color">회사명</div>
@@ -121,7 +150,7 @@ function Form(props) {
                 <div className="booth boothname title_color">부스</div>
                 <div className="booth independent title_color">독립부스(면적만 제공, 3m x 3m)</div>
                 <div className="booth independent_ea">
-                    <input type="number" onChange={()=> setPhBoothOne(0)}/>개
+                    <input type="number" onChange={(e)=> setPhBoothOne(e.target.value)}/>개
                 </div>
                 <div className="booth independent_ea_support">주최측 지원</div>
                 <div className="booth independent_ea_support_total" >
@@ -129,7 +158,7 @@ function Form(props) {
                 </div>
                 <div className="booth nomal title_color">기본(조립)부스(옥타늄, 3m x 3m)</div>
                 <div className="booth nomal_ea">
-                    <input type="number" onChange={()=> setPhBoothTwo(0)}/>개
+                    <input type="number" onChange={(e)=> setPhBoothTwo(e.target.value)}/>개
                 </div>
                 <div className="booth nomal_ea_support">주최측 지원</div>
                 <div className="booth nomal_ea_support_total">
@@ -234,6 +263,12 @@ function Form(props) {
                 </div>
             </div>
             <Plus />
+            <div className="plus_btn_wrap">
+                <Link to="/">
+                    <button className="submit_btn" onClick={submitJoin}>참가신청</button>
+                    <button className="cancle_btn" onClick={()=>alert("메인화면으로 이동합니다.")}>취소하기</button>
+                </Link>
+            </div>
         </div>
     )
 }

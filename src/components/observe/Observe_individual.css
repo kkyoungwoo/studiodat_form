@@ -2,6 +2,22 @@
   width: 950px;
 }
 
+.individual_componets .kakaomap.none {
+  display: none;
+  position: absolute;
+  left: 193px;
+  top: 310px;
+  background: #c9c9c9;
+}
+
+.individual_componets .kakaomap.block {
+  display: block;
+  position: absolute;
+  left: 193px;
+  top: 310px;
+  background: #c9c9c9;
+}
+
 .individual_componets .individual_wrap {
   display: -ms-grid;
   display: grid;
@@ -338,5 +354,42 @@
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: individual_comInterestpany;
+}
+
+.individual_componets .plus_btn_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 2px solid #c0c0c0;
+  border-bottom: 2px solid #c0c0c0;
+  margin: 10px 0 10px 0;
+  padding: 10px 0 10px 0;
+}
+
+.individual_componets .plus_btn_wrap .submit_btn {
+  width: 150px;
+  height: 32px;
+  background: #007ce2;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.individual_componets .plus_btn_wrap .cancle_btn {
+  width: 150px;
+  height: 32px;
+  background: #bbbbbb;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
 }
 /*# sourceMappingURL=Observe_individual.css.map */

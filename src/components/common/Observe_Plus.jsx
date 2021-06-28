@@ -6,10 +6,6 @@ function Observe_Plus() {
 
     const [plusNum,setPlusNum] = useState([1])
 
-    const submitJoin = useCallback(()=>{
-        alert("신청이 완료되었습니다.")
-    })
-
     const plusMambers = useCallback(
         () => {
             const array = [...plusNum]
@@ -98,12 +94,6 @@ function Observe_Plus() {
                                 )
                             })}
                         </div>
-                    </div>
-                    <div className="plus_btn_wrap">
-                        <Link to="/">
-                            <button className="submit_btn" onClick={submitJoin}>참가신청</button>
-                            <button className="cancle_btn" onClick={()=>alert("메인화면으로 이동합니다.")}>취소하기</button>
-                        </Link>
                     </div>
                 </div>
             </div>

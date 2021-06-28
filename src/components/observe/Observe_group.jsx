@@ -2,6 +2,8 @@ import React, { useState,useCallback,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Privacy from './Privacy'
 import './observe.css'
+import emailjs from 'emailjs-com';
+import Kakaomap from '../common/Kakaomap'
 function Observe_group(props) {
 
     useEffect(() => {props.setIsMe(false)})
@@ -25,6 +27,17 @@ function Observe_group(props) {
     const BtnJoin = useCallback(()=>{
         agreeBtn ? alert('신청이 완료되었습니다.') : alert('개인정보 취급방침에 동의해주세요')
     })
+
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_spdcidi', 'template_zau8w0f', e.target, 'user_YOvzVUT3C3OBySLzLPves')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }
 
     return (
         <div>
@@ -68,9 +81,8 @@ function Observe_group(props) {
                         <input type="text" />
                     </div>
                     <div className="Privacy_form Privacy_address title_color">주소</div>
-                    {/*주소찾기 스크립트 삽입 필요 */}
                     <div className="Privacy_form Privacy_address_script">
-                        스크립트
+                    < Kakaomap/>
                     </div>
                     <div className="Privacy_form Privacy_address_text">
                         <span className="text_margin">상세주소</span>
