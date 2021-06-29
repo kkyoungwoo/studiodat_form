@@ -7,23 +7,23 @@ import Kakaomap from '../common/Kakaomap'
 function Observe_group(props) {
 
     //단체명
-    const [groupName,setGroupName] = useState(0)
+    const [groupName,setGroupName] = useState("")
     //담당자성명
-    const [name,setName] = useState(0)
+    const [name,setName] = useState("")
     //담당자연락처
-    const [phone,setPhone] = useState(0)
+    const [phone,setPhone] = useState("")
     //직위
-    const [position,setPosition] = useState(0)
+    const [position,setPosition] = useState("")
     //담당자휴대전화
-    const [number,setNumber] = useState(0)
+    const [number,setNumber] = useState("")
     //이메일
-    const [email,setEmail] = useState(0)
+    const [email,setEmail] = useState("")
     //주소
-    const [addres,setAddres] = useState(0)
+    const [addres,setAddres] = useState("")
     //상세주소
-    const [address,setAddress] = useState(0)
+    const [address,setAddress] = useState("")
     //참관객 명단
-    const [list,setList] = useState(0)
+    const [list,setList] = useState("")
     //참관예정일자
     const [day,setDay] = useState("")
     const [days,setDays] = useState("")
@@ -107,6 +107,7 @@ function Observe_group(props) {
                     " , 참관예정일자 :"+day+days+dayss
                 }/>
             <div className="title_text fontsizeup">단체 온라인 참관신청</div>
+            {address}
             <div>
                 < Privacy />
                 <div className="agree_box">
@@ -147,7 +148,7 @@ function Observe_group(props) {
                     </div>
                     <div className="Privacy_form Privacy_address title_color">주소</div>
                     <div className="Privacy_form Privacy_address_script">
-                    < Kakaomap setAddress={setAddress}/>
+                    < Kakaomap />
                     </div>
                     <div className="Privacy_form Privacy_address_text">
                         <span className="text_margin">상세주소</span>

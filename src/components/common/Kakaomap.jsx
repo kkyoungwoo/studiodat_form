@@ -8,7 +8,7 @@ const Kakaomap = ({ history }) => {
   const [location, setLocation] = useState(null);
   const [zipcode, setZip] = useState(null);
   const [select, setSelect] = useState(false);
-
+  const [address,setAddress] = useState(0)
 
   const handleSelectZip = () => {
     setSelect(true);
@@ -32,7 +32,6 @@ const Kakaomap = ({ history }) => {
     }
     setZip(data.zonecode);
     setLocation(fullAddress);
-    history.setAddress(fullAddress)
   };
 
   return (
