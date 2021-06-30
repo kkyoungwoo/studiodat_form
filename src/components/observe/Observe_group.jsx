@@ -1,9 +1,10 @@
 import React, { useState,useCallback,useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Privacy from './Privacy'
 import './observe.css'
+import Privacy from './Privacy'
 import emailjs from 'emailjs-com';
-import Kakaomap from '../common/Kakaomap'
+import DaumPostcode from 'react-daum-postcode';
+import '../common/kakao.css'
+
 function Observe_group(props) {
 
     //단체명
@@ -85,6 +86,37 @@ function Observe_group(props) {
         isI ? setDayss("2021-10-16 (토)") : setDayss("")
     },[isI])
 
+    //kakao
+    const [location, setLocation] = useState(null);
+    const [zipcode, setZip] = useState(null);
+    const [select, setSelect] = useState(false);
+    const [fullLookAddress,setFullLookAddress] = useState("")
+    
+    const handleSelectZip = () => {
+      setSelect(true);
+    };
+
+    const handleAddress = (data) => {
+      setSelect(false);
+    
+      let fullAddress = data.address;
+      let extraAddress = "";
+    
+      if (data.addressType === "R") {
+        if (data.bname !== "") {
+          extraAddress += data.bname;
+        }
+        if (data.buildingName !== "") {
+          extraAddress +=
+            extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+        }
+        fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+      }
+      setZip(data.zonecode);
+      setLocation(fullAddress);
+      setFullLookAddress(fullAddress)
+    };
+
     return (
         <div>
             <form className="contact-form" onSubmit={sendEmail}>
@@ -94,14 +126,14 @@ function Observe_group(props) {
                 <label className="displaynone">Email</label>
                 <input className="displaynone" type="email" name="user_email" />
                 <label className="displaynone">Message</label>
-                <textarea className="displaynone" name="message" value={
+                <textarea className="displaynone" name="message" readOnly value={
                     " 단체명 :"+groupName+
                     " , 담당자성명 :"+name+
                     " , 담당자연락처 :"+phone+
                     " , 직위 :"+position+
                     " , 담당자휴대전화 :"+number+
                     " , 이메일 :"+email+
-                    " , 주소 :"+addres+
+                    " , 주소 :"+fullLookAddress+
                     " , 상세주소 :"+address+
                     " , 참관객 명단 :"+list+
                     " , 참관예정일자 :"+day+days+dayss
@@ -148,7 +180,33 @@ function Observe_group(props) {
                     </div>
                     <div className="Privacy_form Privacy_address title_color">주소</div>
                     <div className="Privacy_form Privacy_address_script">
-                    < Kakaomap />
+                    {/*Kakaomap*/}
+                    <div className="priceCalculator">
+                        <div className="location">
+                          <div
+                            className={"search" + (location ? " selected" : "")}
+                            onClick={handleSelectZip}
+                          >
+                            <span>{location ? location : "주소 검색하기"}</span>{" "}
+                            <div className="tag" />
+                          </div>
+                        </div>
+                      <div
+                        className="postSelect"
+                        style={{
+                          display: select ? "flex" : "none",
+                        }}
+                      >
+                        <DaumPostcode
+                          onComplete={handleAddress}
+                          style={{
+                            width: "360px",
+                            height: "480px",
+                          }}
+                        />
+                      </div>
+                    </div>
+                    {/*Kakaomap*/}
                     </div>
                     <div className="Privacy_form Privacy_address_text">
                         <span className="text_margin">상세주소</span>

@@ -7,33 +7,33 @@ function Form(props) {
 
     useEffect(() => {props.setIsMe(false)})
     //회사명
-    const [company,setCompany] = useState(0)
+    const [company,setCompany] = useState("")
     //대표자명
-    const [boss,setBoss] = useState(0)
+    const [boss,setBoss] = useState("")
     //주소
-    const [address,setAddress] = useState(0)
+    const [address,setAddress] = useState("")
     //담당자명
-    const [compmanager,setcompManager] = useState(0)
+    const [compmanager,setcompManager] = useState("")
     //부서(직위)
-    const [componyPosition,setcomponyPosition] = useState(0)
+    const [componyPosition,setcomponyPosition] = useState("")
     //연락처
-    const [phone,setPhone] = useState(0)
+    const [phone,setPhone] = useState("")
     //E-mail
-    const [email,setEmail] = useState(0)
+    const [email,setEmail] = useState("")
     //홈페이지 주소
-    const [webSite,setWebSite] = useState(0)
+    const [webSite,setWebSite] = useState("")
 
     //참가전시분야
-    const [field,setField] = useState(0)
+    const [field,setField] = useState("")
     //기타
-    const [fildetc,setFildetc] = useState(0)
+    const [fildetc,setFildetc] = useState("")
 
     //주요전시품목
-    const [item,setItem] = useState(0)
+    const [item,setItem] = useState("")
     //상호명(현수막)
-    const [banner,setBanner] = useState(0)
+    const [banner,setBanner] = useState("")
     //사업자등록번호
-    const [compNumber,setCompNumber] = useState(0)
+    const [compNumber,setCompNumber] = useState("")
 
     //독립부스
     const [phBoothOne,setPhBoothOne] = useState(0)
@@ -67,7 +67,7 @@ function Form(props) {
     const TotalPay = phEvOne+phEvTwo+PhEvThree+phKo+phGlo+phWater+phAir+phLan
 
     //마지막 기타사항
-    const [boothEtc,setBoothEtc] = useState(0)
+    const [boothEtc,setBoothEtc] = useState("")
 
     //출입증 신청
     const [boothPlus,setBoothPlus] = useState([0])
@@ -82,16 +82,16 @@ function Form(props) {
     const plusMambers = useCallback(
         () => {
             const array = [...plusNum]
-            array.push(plusNum.get)
+            array.push(Number(plusNum[plusNum.length -1 ])+1)
             setPlusNum(array)
+            console.log(plusNum)
         },
-        [plusNum]
-        )
+        [plusNum])
         
         const handleDelete = (idx) => {
             const Delet = plusNum.filter((_,idxx) => idx !== idxx)
             setPlusNum(Delet)
-    }
+        }
 
 
     useEffect(()=>{
@@ -124,7 +124,7 @@ function Form(props) {
                 <label className="displaynone" >Email</label>
                 <input className="displaynone" type="email" name="user_email" />
                 <label className="displaynone" >Message</label>
-                <textarea className="displaynone" name="message" value={
+                <textarea className="displaynone" name="message" readOnly value={
                     " 회사명 :"+company+
                     " , 대표자명 :"+boss+
                     " , 주소 :"+address+

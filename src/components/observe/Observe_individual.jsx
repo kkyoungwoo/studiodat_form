@@ -1,11 +1,11 @@
 import React, { useEffect,useState,useCallback } from 'react'
 import './Observe_individual.css'
 import Observe_Plus from '../common/Observe_Plus'
-import Kakaomap from '../common/Kakaomap'
-import { Link } from 'react-router-dom'
 import emailjs from 'emailjs-com';
+import DaumPostcode from 'react-daum-postcode';
+import '../common/kakao.css'
 
-function Observe_individual(props) {
+function Observe_individual() {
 
     //이름
     const [name,setName] = useState("")
@@ -307,6 +307,37 @@ function Observe_individual(props) {
         isMeDD ? setDD(" 기타") : setDD("")
     },[isMeDD])
 
+    //kakao
+    const [location, setLocation] = useState(null);
+    const [zipcode, setZip] = useState(null);
+    const [select, setSelect] = useState(false);
+    const [fullLookAddress,setFullLookAddress] = useState("")
+    
+    const handleSelectZip = () => {
+      setSelect(true);
+    };
+
+    const handleAddress = (data) => {
+      setSelect(false);
+    
+      let fullAddress = data.address;
+      let extraAddress = "";
+    
+      if (data.addressType === "R") {
+        if (data.bname !== "") {
+          extraAddress += data.bname;
+        }
+        if (data.buildingName !== "") {
+          extraAddress +=
+            extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+        }
+        fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+      }
+      setZip(data.zonecode);
+      setLocation(fullAddress);
+      setFullLookAddress(fullAddress)
+    };
+
     return (
         <div className="individual_componets">
             <form className="contact-form" onSubmit={sendEmail}>
@@ -316,10 +347,10 @@ function Observe_individual(props) {
                 <label className="displaynone">Email</label>
                 <input className="displaynone" type="email" name="user_email" />
                 <label className="displaynone">Message</label>
-                <textarea className="displaynone" name="message" value={
+                <textarea className="displaynone" name="message" readOnly value={
                     " 이름 :"+name+
                     " , 휴대폰 :"+phone+
-                    " , 주소 :"+address+
+                    " , 주소 :"+fullLookAddress+
                     " , 상세주소 :"+addresss+
                     " , 이메일 :"+email+
                     " , 회사명 :"+company+
@@ -385,7 +416,33 @@ function Observe_individual(props) {
                         <div className="title">주소</div>
                         <div className="text">
                             <div className="script_wrap">
-                                <Kakaomap />
+                                {/*Kakaomap*/}
+                                <div className="priceCalculator">
+                                    <div className="location">
+                                      <div
+                                        className={"search" + (location ? " selected" : "")}
+                                        onClick={handleSelectZip}
+                                      >
+                                        <span>{location ? location : "주소 검색하기"}</span>{" "}
+                                        <div className="tag" />
+                                      </div>
+                                    </div>
+                                  <div
+                                    className="postSelect"
+                                    style={{
+                                      display: select ? "flex" : "none",
+                                    }}
+                                  >
+                                    <DaumPostcode
+                                      onComplete={handleAddress}
+                                      style={{
+                                        width: "360px",
+                                        height: "480px",
+                                      }}
+                                    />
+                                    </div>
+                                </div>
+                                {/*Kakaomap*/}
                             </div>
                             <div>
                                 상세주소<input type="text" onChange={(e)=> setAddresss(e.target.value)}/>

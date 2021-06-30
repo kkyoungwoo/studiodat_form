@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import DaumPostcode from 'react-daum-postcode';
 import './plus.css'
 
 function Plus(props) {

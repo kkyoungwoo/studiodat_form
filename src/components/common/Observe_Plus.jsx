@@ -9,13 +9,14 @@ function Observe_Plus() {
     const plusMambers = useCallback(
         () => {
             const array = [...plusNum]
-            array.push(plusNum.length)
+            array.push(Number(plusNum[plusNum.length -1 ])+1)
             setPlusNum(array)
+            console.log(plusNum)
         },
-        [plusNum]
-    )
+        [plusNum])
 
     const handleDelete = (idx) => {
+        console.log(plusNum[0])
             const Delet = plusNum.filter((_,idxx) => idx !== idxx)
             setPlusNum(Delet)
     }
@@ -47,7 +48,7 @@ function Observe_Plus() {
                             {plusNum.map((item,idx) => {
                                 return(
                                     <div key={item}>
-                                        <input type="text"/>
+                                        <input type="text" />
                                     </div>
                                 )
                             })}
